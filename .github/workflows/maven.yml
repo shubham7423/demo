@@ -5,7 +5,8 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ master ]
+    branches: 
+      - '**'
   pull_request:
     branches: [ master ]
 
@@ -21,6 +22,6 @@ jobs:
       with:
         java-version: 11
     - name: Build project
-      run: mvn -install
+      run: mvn install
     - name: Test
       run: mvn test
